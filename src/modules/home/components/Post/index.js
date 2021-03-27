@@ -21,7 +21,7 @@ class Post extends React.Component {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus facilisis sit amet quam vitae mattis.
             </div>
             <div className="post-img">
-              <img src="https://images-na.ssl-images-amazon.com/images/I/71LaTazW6eL._AC_SL1500_.jpg"/>
+              <img src="https://images-na.ssl-images-amazon.com/images/I/71LaTazW6eL._AC_SL1500_.jpg" alt=""/>
             </div>
             <div className="description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod vehicula diam vel ultrices. Cras ac lectus gravida, ultricies mauris in, faucibus turpis. Fusce vitae odio dapibus, malesuada quam eget, ornare nisi. Proin pellentesque ipsum dui, sit amet convallis erat tincidunt non. Suspendisse et vestibulum turpis, nec porttitor enim. Morbi aliquam eget neque sit amet interdum. Fusce non blandit orci, eu molestie massa. Praesent at erat id arcu euismod egestas. Donec congue a velit sed interdum. Aliquam eget lacus erat. Proin tristique libero eu enim vulputate rutrum. Nullam at tellus at lacus ornare viverra eu at lacus. Praesent ac dapibus velit. Nunc dignissim auctor erat, sagittis ultricies ex sollicitudin ac. In ut magna ut massa sollicitudin fermentum nec et velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.

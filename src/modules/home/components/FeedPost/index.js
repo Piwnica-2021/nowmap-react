@@ -12,7 +12,7 @@ class FeedPost extends React.Component {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus facilisis sit amet quam vitae mattis.
               </div>
               <div className="post-img">
-                <img src="https://images-na.ssl-images-amazon.com/images/I/71LaTazW6eL._AC_SL1500_.jpg"/>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/71LaTazW6eL._AC_SL1500_.jpg" alt=""/>
               </div>
             </div>
         );

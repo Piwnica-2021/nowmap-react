@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
-import "./styles.scss"
+import GoogleMapReact  from 'google-map-react';
+import Marker from "../Marker";
+import "./styles.scss";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -13,8 +14,13 @@ class Map extends Component {
     }
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps){
-    this.setState({visibility: nextProps.visibility});
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.visibility !== nextProps.visibility) {
+      return {
+        visibility: nextProps.visibility
+      };
+    }
+    return null;
   }
 
   render() {
@@ -23,8 +29,19 @@ class Map extends Component {
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyAUUR3rmebpIm98TxMmXkPZy6wjn2IOfV8" }}
           defaultCenter={{ lat: 50.06, lng: 19.93333 }}
-          defaultZoom={10}
-        />
+          defaultZoom={12}
+        >
+        {this.props.posts.map((post, index) => {
+          return(
+            <Marker
+                lat={post.latitude}
+                lng={post.longitude}
+                name="My Marker"
+                color="orange"
+              />
+          )
+        })}
+        </GoogleMapReact>
       </div>
     );
   }
