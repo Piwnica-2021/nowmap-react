@@ -1,0 +1,30 @@
+.fedd-post{
+  color: white;
+  //background-color: #262322;
+  background-color: #212529;
+  width: 100%;
+  height: auto;
+  margin: 10px 0 10px 0;
+  padding: 10px 5px 10px 5px;
+
+
+  .post-info{
+    font-size: 10px;
+    color: lightgray;
+    margin-bottom: 5px;
+  }
+  .post-title{
+    height: auto;
+    font-size: 20px;
+    font-family: Verdana, sans-serif;
+    margin-bottom: 15px;
+
+  }
+  .post-img{
+    img{
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+  }
+}
