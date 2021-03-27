@@ -6,7 +6,7 @@ class Navbar extends React.Component {
         return (
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/home">React App</Link>
+                    <Link className="navbar-brand" to="/home">MapTalk</Link>
 
                     <button className="navbar-toggler"
                             data-bs-toggle="collapse"
