@@ -56,8 +56,23 @@ class ApiController {
     }
 
     async createPost(post) {
+        const response = await this.postEndpoint("/posts/create", post);
+        if (response.status !== 200)
+            return null;
+        return parseInt(await response.text());
+    }
 
+    async uploadImage(postId, file) {
+        let data = new FormData();
+        data.append("file", file);
+
+        const response = await fetch(`${this.apiUrl}/posts/${postId}/image`, {
+            method: "POST",
+            body: data,
+        });
+        return response.status === 200;
     }
 }
 
-export default ApiController;
+const Api = new ApiController("/api/v1");
+export default Api;
