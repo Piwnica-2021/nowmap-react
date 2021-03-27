@@ -18,7 +18,8 @@ class Feed extends React.Component {
               {this.state.posts.map((post, index) =>{
                 return(
                   <div key={index}>
-                    <FeedPost/>
+                    <FeedPost
+                      onFeedPostClick={this.props.onFeedPostClick}/>
                   </div>
                 )
               } )}

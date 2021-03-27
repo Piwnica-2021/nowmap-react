@@ -4,7 +4,7 @@ import "./styles.scss";
 class FeedPost extends React.Component {
     render() {
         return (
-            <div className="fedd-post">
+            <div className="fedd-post" onClick={this.props.onFeedPostClick}>
               <div className="post-info">
                 Post created by (username) (time_ago)
               </div>
