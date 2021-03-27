@@ -1,32 +1,35 @@
-.fedd-post{
-  color: white;
-  //background-color: #262322;
-  background-color: #212529;
-  width: 100%;
-  height: auto;
-  margin: 0 0 10px 0;
-  padding: 10px 5px 10px 5px;
+.feed-post-card {
+  overflow: hidden;
+  margin: 8px;
+  width: 256px;
+  height: 256px;
+  background-position: center;
+  background-size: cover;
+  transition: 80ms linear;
+  display: flex;
+  flex-direction: column-reverse;
+}
 
+.feed-post-card__title {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  transition: 80ms linear;
+}
 
-  .post-info{
-    font-size: 10px;
-    color: lightgray;
-    margin-bottom: 5px;
-  }
-  .post-title{
-    height: auto;
-    font-size: 20px;
-    font-family: Verdana, sans-serif;
-    margin-bottom: 15px;
+a.feed-post-card, a.feed-post-card:hover {
+  text-decoration: none;
+}
 
-  }
-  .post-img{
-    img{
-      width: 100%;
-      height: auto;
-      margin: 0;
-    }
-  }
+.feed-post-card:hover {
+  transform: scale(1.1);
+}
+
+.feed-post-card:hover > .feed-post-card__title {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .fedd-post:hover{

@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom
 
 import Home from "modules/home";
 import About from "modules/about";
+import NewPostPage from "modules/new-post";
 import Navbar from "../Navbar";
 
 import "./styles.css";
@@ -15,6 +16,10 @@ class App extends React.Component {
                 <Switch>
                     <Route path="/home">
                         <Home/>
+                    </Route>
+
+                    <Route path="/createPost">
+                        <NewPostPage />
                     </Route>
 
                     <Route path="/about">

@@ -19,7 +19,7 @@ class Home extends React.Component {
     }
 
     handleFullFeed = () => {
-      this.setState({fullFeed: !this.state.fullFeed})
+        this.setState({fullFeed: !this.state.fullFeed})
     }
 
     onFeedPostClick = () => {
@@ -36,25 +36,21 @@ class Home extends React.Component {
     render() {
         this.getPosts();
         return (
-          <div className="home-container">
-            { this.state.isPostOpen ?
-              <Post
-                className={this.state.fullFeed ? "post-container feed-full": "post-container"}
-                onFeedPostClick={this.onFeedPostClick}/>:
-              <Feed
-                className={this.state.fullFeed ? "feed-container feed-full": "feed-container"}
-                onFeedPostClick={this.onFeedPostClick}
-                posts={this.state.posts}/>
-            }
-            <Map
-              visibility={!this.state.fullFeed}
-              posts={this.state.posts}
-              defLat={this.state.defLat}
-              defLang={this.state.defLang}/>
-            <div className="full-feed-button">
-              <button onClick={this.handleFullFeed}>{this.state.fullFeed ? "Show": "Hide"}</button>
+            <div className="container-fluid home-container">
+                <div className="row">
+                    <div className="col">
+                        <Feed className={this.state.fullFeed ? "feed-container feed-full" : "feed-container"}/>
+                    </div>
+
+                    <div className="col">
+                        <Map visibility={!this.state.fullFeed}/>
+                    </div>
+                </div>
+
+                <div className="full-feed-button">
+                    <button onClick={this.handleFullFeed}>{this.state.fullFeed ? "Show" : "Hide"}</button>
+                </div>
             </div>
-          </div>
         );
     }
 }

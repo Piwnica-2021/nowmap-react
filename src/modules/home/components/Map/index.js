@@ -28,7 +28,7 @@ class Map extends Component {
       <div className="map-container" style={this.state.visibility?{visibility: "visible"}:{visibility: "hidden"}}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyAUUR3rmebpIm98TxMmXkPZy6wjn2IOfV8" }}
-          defaultCenter={{ lat: 50.06, lng: 19.93333 }}
+          defaultCenter={{ lat: this.props., lng: 19.93333 }}
           defaultZoom={12}
         >
         {this.props.posts.map((post, index) => {

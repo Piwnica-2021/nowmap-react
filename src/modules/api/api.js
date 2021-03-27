@@ -41,8 +41,8 @@ class ApiController {
         return response.status === 200;
     }
 
-    async getRecent(count) {
-        const response = await this.getEndpoint(`/posts/recent/${count}`);
+    async getRecent(count, last=-1) {
+        const response = await this.getEndpoint(`/posts/recent?count=${count}&last=${last}`);
         if (response.status !== 200)
             return null;
         return response.json();
@@ -62,10 +62,13 @@ class ApiController {
         return parseInt(await response.text());
     }
 
-    async uploadImage(postId, form) {
+    async uploadImage(postId, file) {
+        let data = new FormData();
+        data.append("file", file);
+
         const response = await fetch(`${this.apiUrl}/posts/${postId}/image`, {
             method: "POST",
-            body: new FormData(form),
+            body: data,
         });
         return response.status === 200;
     }

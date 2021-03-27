@@ -3,8 +3,8 @@ class Post {
         this.title = title;
         this.description = description;
         this.tags = tags;
-        this.lat = lat;
-        this.long = long;
+        this.latitude = lat;
+        this.longitude = long;
     }
 }
 
