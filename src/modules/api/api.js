@@ -40,6 +40,24 @@ class ApiController {
             {username, password});
         return response.status === 200;
     }
+
+    async getRecent(count) {
+        const response = await this.getEndpoint(`/posts/recent/${count}`);
+        if (response.status !== 200)
+            return null;
+        return response.json();
+    }
+
+    async getPost(id) {
+        const response = await this.getEndpoint(`/posts/${id}`);
+        if (response.status !== 200)
+            return null;
+        return response.json();
+    }
+
+    async createPost(post) {
+
+    }
 }
 
 export default ApiController;
