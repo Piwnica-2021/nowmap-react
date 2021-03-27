@@ -4,7 +4,7 @@ import "./styles.scss";
 class FeedPost extends React.Component {
     constructor(props) {
         super(props);
-        this.imageUrl = `/api/v1/posts/${this.props.postID}/image`;
+        this.imageUrl = `/api/v1/posts/${this.props.post.postID}/image`;
     }
 
     render() {
