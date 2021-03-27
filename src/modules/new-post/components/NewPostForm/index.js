@@ -7,7 +7,8 @@ class NewPostForm extends React.Component {
         super(props);
 
         this.state = {
-            titleValid: true
+            titleValid: true,
+            imageValid: true,
         };
 
         this.titleInput = React.createRef();
@@ -22,17 +23,26 @@ class NewPostForm extends React.Component {
 
     validate() {
         const title = this.titleInput.current.value;
+        const hasImage = this.fileInput.current.files.length > 0;
 
         if (title === "") {
             this.setState({titleValid: false});
             this.titleInput.current.focus();
             return false;
         }
-        else
-        {
+        else {
             this.setState({titleValid: true});
-            return true;
         }
+
+        if (!hasImage) {
+            this.setState({imageValid: false});
+            return false;
+        }
+        else {
+            this.setState({imageValid: true});
+        }
+
+        return true;
     }
 
     async handleSubmit(e) {
@@ -78,8 +88,11 @@ class NewPostForm extends React.Component {
                 </div>
 
                 <div className="mb-3">
-                    <label className="mb-1">Optional image</label>
-                    <input className="form-control" type="file" ref={this.fileInput} />
+                    <label className="mb-1">Image</label>
+                    <input className={`form-control ${this.state.imageValid ? "" : "is-invalid"}`} type="file" ref={this.fileInput} />
+                    <div className="invalid-feedback">
+                        Image required
+                    </div>
                 </div>
 
                 <div>
