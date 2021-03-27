@@ -7,23 +7,15 @@ class Feed extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        posts: [1,2,3,4,5],
-      }
+        posts: [1, 2, 3, 4, 5, 6, 7]
+      };
     }
 
     render() {
         return (
-          <div>
-            <div className={this.props.className}>
-              {this.state.posts.map((post, index) =>{
-                return(
-                  <div key={index}>
-                    <FeedPost/>
-                  </div>
-                )
-              } )}
+            <div className="feed-grid">
+                {this.state.posts.map((post, index) => <FeedPost key={index} />)}
             </div>
-          </div>
         );
     }
 }
