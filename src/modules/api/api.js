@@ -41,8 +41,8 @@ class ApiController {
         return response.status === 200;
     }
 
-    async getRecent(count) {
-        const response = await this.getEndpoint(`/posts/recent/${count}`);
+    async getRecent(count, last=-1) {
+        const response = await this.getEndpoint(`/posts/recent?count=${count}&last=${last}`);
         if (response.status !== 200)
             return null;
         return response.json();
