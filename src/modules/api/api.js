@@ -62,10 +62,13 @@ class ApiController {
         return parseInt(await response.text());
     }
 
-    async uploadImage(postId, form) {
+    async uploadImage(postId, file) {
+        let data = new FormData();
+        data.append("file", file);
+
         const response = await fetch(`${this.apiUrl}/posts/${postId}/image`, {
             method: "POST",
-            body: new FormData(form),
+            body: data,
         });
         return response.status === 200;
     }

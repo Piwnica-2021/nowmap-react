@@ -9,7 +9,6 @@ class NewPostForm extends React.Component {
         this.titleInput = React.createRef();
         this.descInput = React.createRef();
         this.tagsInput = React.createRef();
-        this.form = React.createRef();
         this.fileInput = React.createRef();
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,16 +25,16 @@ class NewPostForm extends React.Component {
 
         const postId = await Api.createPost(new Post(title, desc, tags, lat, long));
 
-        const form = this.form.current;
-        if (this.fileInput.current.files.length > 0) {
-            await Api.uploadImage(postId, form);
+        const fileInput = this.fileInput.current;
+        if (fileInput.files.length > 0) {
+            await Api.uploadImage(postId, fileInput.files[0]);
         }
     }
 
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit} ref={this.form} encType="multipart/form-data">
+                <form onSubmit={this.handleSubmit}>
                     <div>
                         <label>Title</label>
                         <input type="text" ref={this.titleInput} />
@@ -53,7 +52,7 @@ class NewPostForm extends React.Component {
 
                     <div>
                         <label>Image</label>
-                        <input type="file" id="file" ref={this.fileInput} />
+                        <input type="file" ref={this.fileInput} />
                     </div>
 
                     <div>
