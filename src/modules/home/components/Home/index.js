@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.scss";
 import Map from "../Map"
 import Feed from "../Feed"
+import Api from "modules/api";
 
 class Home extends React.Component {
 
@@ -9,7 +10,16 @@ class Home extends React.Component {
         super(props);
         this.state = {
             fullFeed: false,
+            posts: [],
         }
+    }
+
+    componentDidMount() {
+        Api.getRecent(100).then(posts => {
+            if (posts !== null) {
+                this.setState({posts: posts});
+            }
+        });
     }
 
     handleFullFeed = () => {
@@ -21,7 +31,7 @@ class Home extends React.Component {
             <div className="container-fluid home-container">
                 <div className="row">
                     <div className="col">
-                        <Feed className={this.state.fullFeed ? "feed-container feed-full" : "feed-container"}/>
+                        <Feed posts={this.state.posts} className={this.state.fullFeed ? "feed-container feed-full" : "feed-container"}/>
                     </div>
 
                     <div className="col">

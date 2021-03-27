@@ -4,17 +4,14 @@ import FeedPost from "../FeedPost";
 
 class Feed extends React.Component {
 
-    constructor(props){
-      super(props);
-      this.state = {
-        posts: [1, 2, 3, 4, 5, 6, 7]
-      };
+    constructor(props) {
+        super(props);
     }
 
     render() {
         return (
             <div className="feed-grid">
-                {this.state.posts.map((post, index) => <FeedPost key={index} />)}
+                {this.props.posts.map((post, index) => <FeedPost post={post} key={index}/>)}
             </div>
         );
     }

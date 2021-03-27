@@ -16,7 +16,7 @@
   font-weight: 500;
   height: 52px;
   padding: 16px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.5);
   transition: 80ms linear;
 }
 
@@ -29,5 +29,5 @@ a.feed-post-card, a.feed-post-card:hover {
 }
 
 .feed-post-card:hover > .feed-post-card__title {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
 }
