@@ -14,7 +14,8 @@ class FeedPost extends React.Component {
 
     handleLike = async () => {
         const post = await Api.likePost(this.props.post.postID);
-        this.setState({likes: post.upvotes, liked: true});
+        if (post !== null)
+            this.setState({likes: post.upvotes, liked: true});
     }
 
     render() {
