@@ -26,6 +26,10 @@ class FeedPost extends React.Component {
             <a className="feed-post-card shadow rounded"
                style={{backgroundImage: `url(${this.imageUrl})`}}>
                 <div className="feed-post-card__footer">
+                    <div className="feed-post-card__distance">
+                        {this.props.distance / 1000} km
+                    </div>
+
                     <div className="feed-post-card__title">
                         {this.props.post.title}
                     </div>

@@ -11,7 +11,7 @@ class Feed extends React.Component {
     render() {
         return (
             <div className="feed-grid">
-                {this.props.posts.map((post, index) => <FeedPost post={post} key={index}/>)}
+                {this.props.posts.map((post, index) => <FeedPost distance={this.props.dist[post.postID]} post={post} key={index}/>)}
             </div>
         );
     }
