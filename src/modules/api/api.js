@@ -100,6 +100,10 @@ class ApiController {
         });
         return response.status === 200;
     }
+
+    async likePost(postId) {
+
+    }
 }
 
 const Api = new ApiController("/api/v1");
