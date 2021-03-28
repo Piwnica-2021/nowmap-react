@@ -69,3 +69,7 @@ a.feed-post-card, a.feed-post-card:hover {
 .like-button:hover, .liked {
   color: deepskyblue;
 }
+
+.liked {
+  cursor: default;
+}
