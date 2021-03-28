@@ -1,4 +1,7 @@
-Chłopaki z piwnicy
+# Chłopaki z piwnicy
+
+# Opis
+https://youtu.be/9YMltueNg-M
 
 MapTalk to nowa platforma społecznościowa w której główną osią interakcji między użytkownikami jest mapa. Użytkownicy mogą dodawać posty wiążąc je od razu z konkretnym miejscem na mapie. Userzy będą mogli wyświetlać posty dodane w pobliżu ich, najbardziej lubiane posty z okolicy czy niedawno dodane.
 
