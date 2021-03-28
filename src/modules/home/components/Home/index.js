@@ -135,7 +135,7 @@ class Home extends React.Component {
                                 </ul>
                             </div>
 
-                            <div onClick={this.loadPosts} className="ms-auto refresh-button material-icons">refresh</div>
+                            <div onClick={() => this.loadPosts().then(posts => this.setState({posts: posts}))} className="ms-auto refresh-button material-icons">refresh</div>
 
                             {((this.state.showFeed ^ this.state.showMap) === 1) &&
                             <div className="ms-3">
