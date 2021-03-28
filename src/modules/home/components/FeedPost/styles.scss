@@ -11,7 +11,6 @@
 }
 
 .feed-post-card__footer {
-  height: 60px;
   background: rgba(0, 0, 0, 0.5);
   transition: 80ms linear;
   color: #fff;
@@ -53,8 +52,29 @@ a.feed-post-card, a.feed-post-card:hover {
 
 .feed-post-card:hover > .feed-post-card__footer {
   background: rgba(0, 0, 0, 0.9);
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .feed-post-card:hover > .feed-post-card__content {
   opacity: 1;
+}
+
+.like-button {
+  user-select: none;
+  cursor: pointer;
+  transition: 80ms linear;
+}
+
+.like-button:hover, .liked {
+  color: deepskyblue;
+}
+
+.liked {
+  cursor: default;
+}
+
+.feed-post-card__distance {
+  font-weight: lighter;
 }

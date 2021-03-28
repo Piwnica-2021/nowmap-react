@@ -41,8 +41,15 @@ class ApiController {
         return response.status === 200;
     }
 
-    async getRecent(count) {
-        const response = await this.getEndpoint(`/posts/recent?count=${count}`);
+    async getPostDistance(lat, long) {
+        const response = await this.getEndpoint(`/posts/dist?lat=${lat}&lon=${long}`);
+        if (response.status !== 200)
+            return null;
+        return response.json();
+    }
+
+    async getRecent() {
+        const response = await this.getEndpoint(`/posts/recent`);
         if (response.status !== 200)
             return null;
         return response.json();
@@ -55,8 +62,8 @@ class ApiController {
         return response.json();
     }
 
-    async getNearestDistance(lat, long, radius = 5000) {
-        const response = await this.getEndpoint(`/posts/near/dist?lat=${lat}&lon=${long}&radius=${radius}`);
+    async getFeatured(upvotes) {
+        const response = await this.getEndpoint(`/posts/featured?upvotes=${upvotes}`);
         if (response.status !== 200)
             return null;
         return response.json();
@@ -85,6 +92,13 @@ class ApiController {
             body: data,
         });
         return response.status === 200;
+    }
+
+    async likePost(postId) {
+        const response = await this.postEndpoint(`/posts/${postId}/like`);
+        if (response.status !== 200)
+            return null;
+        return response.json();
     }
 }
 
