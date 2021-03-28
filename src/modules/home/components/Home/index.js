@@ -23,12 +23,16 @@ class Home extends React.Component {
             myLong: 19.95,
             showMap: true,
             showFeed: true,
+            dist: {},
         };
     }
 
     async loadPosts(sorting = null) {
         if (sorting === null)
             sorting = this.state.sorting
+
+        const dist = await Api.getPostDistance(this.state.myLat, this.state.myLong) || {};
+        this.setState({dist: dist});
 
         let posts = null;
         switch (sorting) {
@@ -127,7 +131,7 @@ class Home extends React.Component {
                             </div>}
                         </div>
 
-                        {this.state.showFeed && <Feed posts={this.state.posts} className="feed-container"/>}
+                        {this.state.showFeed && <Feed dist={this.state.dist} posts={this.state.posts} className="feed-container"/>}
                     </div>
 
                     {this.state.showMap &&
