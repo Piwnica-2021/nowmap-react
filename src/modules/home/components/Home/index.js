@@ -24,6 +24,7 @@ class Home extends React.Component {
             showMap: true,
             showFeed: true,
             dist: {},
+            index: -1,
         };
     }
 
@@ -93,6 +94,14 @@ class Home extends React.Component {
         this.setState({showFeed: true, showMap: true});
     }
 
+    setCurrentCord = (lat, long, index) => {
+      this.setState({
+        myLat: lat,
+        myLong: long,
+        index: index,
+      });
+    }
+
     render() {
         return (
             <div className="container-fluid home-container">
@@ -132,12 +141,12 @@ class Home extends React.Component {
                             </div>}
                         </div>
 
-                        {this.state.showFeed && <Feed dist={this.state.dist} posts={this.state.posts} className="feed-container"/>}
+                        {this.state.showFeed && <Feed dist={this.state.dist} posts={this.state.posts} className="feed-container" setCurrentCord={this.setCurrentCord}/>}
                     </div>
 
                     {this.state.showMap &&
                     <div className="col">
-                        <Map posts={this.state.posts}/>
+                        <Map posts={this.state.posts} lat={this.state.myLat} long={this.state.myLong} index={this.state.index}/>
                     </div>}
                 </div>
 
