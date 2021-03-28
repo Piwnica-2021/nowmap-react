@@ -36,8 +36,8 @@ class Map extends Component {
                       lat={post.latitude}
                       lng={post.longitude}
                       name={post.title}
-                      color={this.state.index == index ? "red": "blue"}
-                      visibility={this.state.index == index ? "visible": "hidden"}
+                      color={this.state.index === index ? "red": "blue"}
+                      visibility={this.state.index === index ? "visible": "hidden"}
                       icon="place"
                   />
               )

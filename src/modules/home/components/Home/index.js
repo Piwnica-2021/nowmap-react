@@ -150,7 +150,12 @@ class Home extends React.Component {
 
                     {this.state.showMap &&
                     <div className="col">
-                        <Map posts={this.state.posts} lat={this.state.myLat} long={this.state.myLong} index={this.state.index}/>
+                        <Map posts={this.state.posts}
+                             lat={this.state.myLat}
+                             long={this.state.myLong}
+                             userLat={this.state.userLat}
+                             userLong={this.state.userLong}
+                             index={this.state.index}/>
                     </div>}
                 </div>
 
