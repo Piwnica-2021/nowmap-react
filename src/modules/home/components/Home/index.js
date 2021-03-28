@@ -33,7 +33,7 @@ class Home extends React.Component {
         let posts = null;
         switch (sorting) {
             case SORT_MODE.RECENT:
-                posts = await Api.getRecent(100);
+                posts = await Api.getRecent();
                 break;
 
             case SORT_MODE.FEATURED:
