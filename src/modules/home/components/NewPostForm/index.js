@@ -54,8 +54,8 @@ class NewPostForm extends React.Component {
         const title = this.titleInput.current.value;
         const desc = this.descInput.current.value;
         const tags = this.tagsInput.current.value;
-        const lat = 0;
-        const long = 0;
+        const lat = this.props.userLat;
+        const long = this.props.userLong;
 
         const postId = await Api.createPost(new Post(title, desc, tags, lat, long));
 
@@ -64,7 +64,7 @@ class NewPostForm extends React.Component {
             await Api.uploadImage(postId, fileInput.files[0]);
         }
 
-        this.form.current.reset();
+        window.location.reload();
     }
 
     render() {

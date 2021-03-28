@@ -21,6 +21,8 @@ class Home extends React.Component {
             sorting: SORT_MODE.RECENT,
             myLat: 50.05,
             myLong: 19.95,
+            userLat: 50.0640,
+            userLong: 19.9276,
             showMap: true,
             showFeed: true,
             dist: {},
@@ -146,7 +148,7 @@ class Home extends React.Component {
 
                     {this.state.showMap &&
                     <div className="col">
-                        <Map posts={this.state.posts} lat={this.state.myLat} long={this.state.myLong} index={this.state.index}/>
+                        <Map posts={this.state.posts} lat={this.state.myLat} long={this.state.myLong} userLat={this.state.userLat} userLong={this.state.userLong} index={this.state.index}/>
                     </div>}
                 </div>
 
@@ -158,7 +160,9 @@ class Home extends React.Component {
                     this.state.createModalOn &&
                     <CreateModal
                         createModalOn={this.state.createModalOn}
-                        onCreateModalCall={this.onCreateModalCall}/>
+                        onCreateModalCall={this.onCreateModalCall}
+                        userLat={this.state.userLat}
+                        userLong={this.state.userLong}/>
                 }
 
             </div>

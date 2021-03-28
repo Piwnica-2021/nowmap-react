@@ -35,11 +35,21 @@ class Map extends Component {
                   <Marker
                       lat={post.latitude}
                       lng={post.longitude}
-                      name="My Marker"
+                      name={post.title}
                       color={this.state.index == index ? "red": "blue"}
+                      visibility={this.state.index == index ? "visible": "hidden"}
+                      icon="place"
                   />
               )
             })}
+            <Marker
+                lat={this.props.userLat}
+                lng={this.props.userLong}
+                name={null}
+                color="black"
+                visibility="visible"
+                icon="emoji_people"
+            />
           </GoogleMapReact>
         </div>
     );
