@@ -162,7 +162,9 @@ class Home extends React.Component {
                     this.state.createModalOn &&
                     <CreateModal
                         createModalOn={this.state.createModalOn}
-                        onCreateModalCall={this.onCreateModalCall}/>
+                        onCreateModalCall={this.onCreateModalCall}
+                        userLat={this.state.userLat}
+                        userLong={this.state.userLong}/>
                 }
 
             </div>

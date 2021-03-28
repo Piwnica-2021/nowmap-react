@@ -17,7 +17,7 @@ class CreateModal extends React.Component {
                 <span id="X" onClick={this.props.onCreateModalCall}>X</span>
               </ModalHeader>
               <ModalBody>
-                <NewPostForm />
+                <NewPostForm userLat={this.props.userLat} userLong={this.props.userLong}/>
               </ModalBody>
             </Modal>
           </div>
