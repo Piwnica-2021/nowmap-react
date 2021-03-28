@@ -6,7 +6,7 @@ class Navbar extends React.Component {
         return (
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/home">React App</Link>
+                    <Link className="navbar-brand" to="/home">MapTalk</Link>
 
                     <button className="navbar-toggler"
                             data-bs-toggle="collapse"
@@ -25,7 +25,25 @@ class Navbar extends React.Component {
                             <li className="nav-item">
                                 <NavLink className="nav-link"
                                          activeClassName="active"
-                                         to="/about">About</NavLink>
+                                         to="/comingsoon/1">My Account</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link"
+                                         activeClassName="active"
+                                         to="/comingsoon/2">Followers</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link"
+                                         activeClassName="active"
+                                         to="/comingsoon/3">Following</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link"
+                                         activeClassName="active"
+                                         to="/comingsoon/4">About</NavLink>
                             </li>
                         </ul>
                     </div>
