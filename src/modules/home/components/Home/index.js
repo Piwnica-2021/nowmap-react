@@ -28,7 +28,7 @@ class Home extends React.Component {
         };
     }
 
-    async loadPosts(sorting = null) {
+    loadPosts = async (sorting = null) => {
         if (sorting === null)
             sorting = this.state.sorting
 
@@ -133,8 +133,10 @@ class Home extends React.Component {
                                 </ul>
                             </div>
 
+                            <div onClick={this.loadPosts} className="ms-auto refresh-button material-icons">refresh</div>
+
                             {((this.state.showFeed ^ this.state.showMap) === 1) &&
-                            <div className="ms-auto">
+                            <div>
                                 <button onClick={this.switchMap} className="btn btn-secondary">
                                     {this.state.showMap ? "Feed" : "Map"}
                                 </button>
