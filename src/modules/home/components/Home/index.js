@@ -56,30 +56,30 @@ class Home extends React.Component {
 
         return (
             <div className="container-fluid home-container">
-                <div className="px-2 mb-2 pt-2 d-flex text-white">
-                    <div className="dropdown">
-                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                            {this.state.sorting}
-                        </button>
-                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            {this.state.sorting !== SORT_MODE.NEAR ?
-                                <li><a onClick={() => this.changeSorting(SORT_MODE.NEAR)} className="dropdown-item">Nearest</a></li>
-                                : null}
-
-                            {this.state.sorting !== SORT_MODE.RECENT ?
-                                <li><a onClick={() => this.changeSorting(SORT_MODE.RECENT)} className="dropdown-item">Recent</a></li>
-                                : null}
-
-                            {this.state.sorting !== SORT_MODE.FEATURED ?
-                                <li><a onClick={() => this.changeSorting(SORT_MODE.FEATURED)} className="dropdown-item">Featured</a></li>
-                                : null}
-                        </ul>
-                    </div>
-                </div>
-
                 <div className="row">
                     <div className="col">
+                        <div className="px-2 mb-2 pt-2 d-flex text-white">
+                            <div className="dropdown">
+                                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    {this.state.sorting}
+                                </button>
+                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    {this.state.sorting !== SORT_MODE.NEAR ?
+                                        <li><a onClick={() => this.changeSorting(SORT_MODE.NEAR)} className="dropdown-item">Nearest</a></li>
+                                        : null}
+
+                                    {this.state.sorting !== SORT_MODE.RECENT ?
+                                        <li><a onClick={() => this.changeSorting(SORT_MODE.RECENT)} className="dropdown-item">Recent</a></li>
+                                        : null}
+
+                                    {this.state.sorting !== SORT_MODE.FEATURED ?
+                                        <li><a onClick={() => this.changeSorting(SORT_MODE.FEATURED)} className="dropdown-item">Featured</a></li>
+                                        : null}
+                                </ul>
+                            </div>
+                        </div>
+
                         <Feed posts={this.state.posts} className="feed-container"/>
                     </div>
 
