@@ -19,8 +19,8 @@ class Home extends React.Component {
             posts: [],
             createModalOn: false,
             sorting: SORT_MODE.RECENT,
-            myLat: 50.05,
-            myLong: 19.95,
+            myLat: 50.0640,
+            myLong: 19.9276,
             userLat: 50.0640,
             userLong: 19.9276,
             showMap: true,
@@ -30,11 +30,11 @@ class Home extends React.Component {
         };
     }
 
-    async loadPosts(sorting = null) {
+    loadPosts = async (sorting = null) => {
         if (sorting === null)
             sorting = this.state.sorting
 
-        const dist = await Api.getPostDistance(this.state.myLat, this.state.myLong) || {};
+        const dist = await Api.getPostDistance(this.state.userLat, this.state.userLong) || {};
         this.setState({dist: dist});
 
         let posts = null;
@@ -48,7 +48,7 @@ class Home extends React.Component {
                 break;
 
             case SORT_MODE.NEAR:
-                posts = await Api.getNearest(this.state.myLat, this.state.myLong)
+                posts = await Api.getNearest(this.state.userLat, this.state.userLong)
                 break;
         }
         return posts === null ? [] : posts;
@@ -135,10 +135,12 @@ class Home extends React.Component {
                                 </ul>
                             </div>
 
+                            <div onClick={() => this.loadPosts().then(posts => this.setState({posts: posts}))} className="ms-auto refresh-button material-icons">refresh</div>
+
                             {((this.state.showFeed ^ this.state.showMap) === 1) &&
-                            <div className="ms-auto">
-                                <button onClick={this.switchMap} className="btn btn-secondary">
-                                    {this.state.showMap ? "Feed" : "Map"}
+                            <div className="ms-3">
+                                <button onClick={this.switchMap} className="btn btn-secondary material-icons" style={{fontSize: "30px", padding: "0px 5px"}}>
+                                    {this.state.showMap ? "map" : "feed"}
                                 </button>
                             </div>}
                         </div>
@@ -148,7 +150,7 @@ class Home extends React.Component {
 
                     {this.state.showMap &&
                     <div className="col">
-                        <Map posts={this.state.posts} lat={this.state.myLat} long={this.state.myLong} userLat={this.state.userLat} userLong={this.state.userLong} index={this.state.index}/>
+                        <Map posts={this.state.posts} lat={this.state.myLat} long={this.state.myLong} index={this.state.index}/>
                     </div>}
                 </div>
 

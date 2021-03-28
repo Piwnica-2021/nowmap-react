@@ -77,6 +77,13 @@ class ApiController {
     }
 
     async createPost(post) {
+        if (post.title === null)
+            post.title = ""
+        if (post.description === null)
+            post.description = ""
+        if (post.tags === null)
+            post.tags = ""
+
         const response = await this.postEndpoint("/posts/create", post);
         if (response.status !== 200)
             return null;

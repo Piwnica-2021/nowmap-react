@@ -21,9 +21,13 @@ class FeedPost extends React.Component {
     }
 
     render() {
+        const border = this.props.post.view ? "border border-warning border-4" : "";
         const tags = this.props.post.tags.split(' ').map(t => `#${t}`).join(' ');
         return (
-            <a className="feed-post-card shadow rounded" onClick={() => this.props.setCurrentCord(this.props.post.latitude, this.props.post.longitude, this.props.index)} onMouseOver={() => this.props.setCurrentCord(this.props.post.latitude, this.props.post.longitude, this.props.index)} onMouseOut={() => this.props.setCurrentCord(50.0640, 19.9276, -1)}
+            <a className={`feed-post-card shadow rounded ${border}`}
+               onClick={() => this.props.setCurrentCord(this.props.post.latitude, this.props.post.longitude, this.props.index)}
+               onMouseOver={() => this.props.setCurrentCord(this.props.post.latitude, this.props.post.longitude, this.props.index)}
+               onMouseOut={() => this.props.setCurrentCord(50.0640, 19.9276, -1)}
                style={{backgroundImage: `url(${this.imageUrl})`}}>
                 <div className="feed-post-card__footer">
                     <div className="feed-post-card__distance">

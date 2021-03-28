@@ -25,7 +25,25 @@ class Navbar extends React.Component {
                             <li className="nav-item">
                                 <NavLink className="nav-link"
                                          activeClassName="active"
-                                         to="/about">About</NavLink>
+                                         to="/comingsoon/1">My Account</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link"
+                                         activeClassName="active"
+                                         to="/comingsoon/2">Followers</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link"
+                                         activeClassName="active"
+                                         to="/comingsoon/3">Following</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link"
+                                         activeClassName="active"
+                                         to="/comingsoon/4">About</NavLink>
                             </li>
                         </ul>
                     </div>
