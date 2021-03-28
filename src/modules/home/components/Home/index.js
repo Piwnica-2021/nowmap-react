@@ -21,6 +21,7 @@ class Home extends React.Component {
             sorting: SORT_MODE.RECENT,
             myLat: 50.05,
             myLong: 19.95,
+            index: -1,
         }
     }
 
@@ -58,6 +59,14 @@ class Home extends React.Component {
       this.setState({createModalOn: !this.state.createModalOn});
     }
 
+    setCurrentCord = (lat, long, index) => {
+      this.setState({
+        myLat: lat,
+        myLong: long,
+        index: index,
+      });
+    }
+
     render() {
 
         return (
@@ -86,11 +95,11 @@ class Home extends React.Component {
                             </div>
                         </div>
 
-                        <Feed posts={this.state.posts} className="feed-container"/>
+                        <Feed posts={this.state.posts} className="feed-container" setCurrentCord={this.setCurrentCord}/>
                     </div>
 
                     <div className="col">
-                        <Map posts={this.state.posts}/>
+                        <Map posts={this.state.posts} lat={this.state.myLat} long={this.state.myLong} index={this.state.index}/>
                     </div>
                 </div>
 

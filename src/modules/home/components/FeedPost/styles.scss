@@ -48,6 +48,7 @@ a.feed-post-card, a.feed-post-card:hover {
 
 .feed-post-card:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .feed-post-card:hover > .feed-post-card__footer {
