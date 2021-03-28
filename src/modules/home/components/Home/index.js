@@ -3,6 +3,7 @@ import "./styles.scss";
 import Map from "../Map"
 import Feed from "../Feed"
 import Api from "modules/api";
+import CreateModal from "../CreateModal"
 
 class Home extends React.Component {
 
@@ -10,6 +11,7 @@ class Home extends React.Component {
         super(props);
         this.state = {
             posts: [],
+            createModalOn: false,
         }
     }
 
@@ -19,6 +21,10 @@ class Home extends React.Component {
                 this.setState({posts: posts});
             }
         });
+    }
+
+    onCreateModalCall = () => {
+      this.setState({createModalOn: !this.state.createModalOn});
     }
 
     render() {
@@ -35,8 +41,16 @@ class Home extends React.Component {
                 </div>
 
                 <div className="full-feed-button">
-                    <button>Post</button>
+                    <button onClick={this.onCreateModalCall}>Post</button>
                 </div>
+
+                {
+                  this.state.createModalOn ?
+                      <CreateModal
+                        createModalOn={this.state.createModalOn}
+                        onCreateModalCall={this.onCreateModalCall}/>: null
+                  }
+
             </div>
         );
     }
