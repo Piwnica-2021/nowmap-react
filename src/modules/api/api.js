@@ -41,8 +41,22 @@ class ApiController {
         return response.status === 200;
     }
 
-    async getRecent(count, last=-1) {
-        const response = await this.getEndpoint(`/posts/recent?count=${count}&last=${last}`);
+    async getRecent(count) {
+        const response = await this.getEndpoint(`/posts/recent?count=${count}`);
+        if (response.status !== 200)
+            return null;
+        return response.json();
+    }
+
+    async getNearest(lat, long, radius = 5000) {
+        const response = await this.getEndpoint(`/posts/near?lat=${lat}&lon=${long}&radius=${radius}`);
+        if (response.status !== 200)
+            return null;
+        return response.json();
+    }
+
+    async getNearestDistance(lat, long, radius = 5000) {
+        const response = await this.getEndpoint(`/posts/near/dist?lat=${lat}&lon=${long}&radius=${radius}`);
         if (response.status !== 200)
             return null;
         return response.json();

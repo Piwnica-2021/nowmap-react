@@ -8,10 +8,23 @@ class FeedPost extends React.Component {
     }
 
     render() {
+        const tags = this.props.post.tags.split(' ').map(t => `#${t}`).join(' ');
         return (
             <a className="feed-post-card shadow rounded"
                style={{backgroundImage: `url(${this.imageUrl})`}}>
-                <div className="feed-post-card__title">{this.props.post.title}</div>
+                <div className="feed-post-card__footer">
+                    <div className="feed-post-card__title">
+                        {this.props.post.title}
+                    </div>
+
+                    <div className="feed-post-card__tags">
+                        {tags}
+                    </div>
+                </div>
+
+                <div className="feed-post-card__content">
+                    {this.props.post.description}
+                </div>
             </a>
         );
     }
