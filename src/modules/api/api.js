@@ -102,7 +102,10 @@ class ApiController {
     }
 
     async likePost(postId) {
-
+        const response = await this.postEndpoint(`/posts/${postId}/like`);
+        if (response.status !== 200)
+            return null;
+        return response.json();
     }
 }
 
