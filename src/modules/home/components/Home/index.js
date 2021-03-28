@@ -53,6 +53,7 @@ class Home extends React.Component {
 
     componentDidMount() {
         this.mql = window.matchMedia("(orientation: landscape)");
+        this.handleMediaQuery({matches: this.mql.matches})
         this.mql.addEventListener("change", this.handleMediaQuery);
         this.loadPosts().then(posts => this.setState({posts: posts}));
     }
