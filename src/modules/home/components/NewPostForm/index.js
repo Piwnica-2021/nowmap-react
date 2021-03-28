@@ -1,6 +1,6 @@
 import React from "react";
-
 import Api, {Post} from "modules/api";
+import "./style.scss";
 
 class NewPostForm extends React.Component {
     constructor(props) {
@@ -95,7 +95,7 @@ class NewPostForm extends React.Component {
                     </div>
                 </div>
 
-                <div>
+                <div className="my-submit-button">
                     <input className="btn btn-primary" type="submit" value="Upload" />
                 </div>
             </form>

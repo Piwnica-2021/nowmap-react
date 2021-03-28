@@ -3,6 +3,7 @@ import "./styles.scss";
 import Map from "../Map"
 import Feed from "../Feed"
 import Api from "modules/api";
+import CreateModal from "../CreateModal"
 
 const SORT_MODE = {
     FEATURED: "Featured",
@@ -16,6 +17,7 @@ class Home extends React.Component {
         super(props);
         this.state = {
             posts: [],
+            createModalOn: false,
             sorting: SORT_MODE.RECENT,
             myLat: 50.05,
             myLong: 19.95,
@@ -50,6 +52,10 @@ class Home extends React.Component {
         this.setState({sorting: mode, posts: []});
         let posts = await this.loadPosts(mode);
         this.setState({posts: posts});
+    }
+
+    onCreateModalCall = () => {
+      this.setState({createModalOn: !this.state.createModalOn});
     }
 
     render() {
@@ -89,8 +95,16 @@ class Home extends React.Component {
                 </div>
 
                 <div className="full-feed-button">
-                    <button>Post</button>
+                    <button onClick={this.onCreateModalCall}>Post</button>
                 </div>
+
+                {
+                  this.state.createModalOn ?
+                      <CreateModal
+                        createModalOn={this.state.createModalOn}
+                        onCreateModalCall={this.onCreateModalCall}/>: null
+                  }
+
             </div>
         );
     }
