@@ -17,8 +17,15 @@ class FeedPost extends React.Component {
                         {this.props.post.title}
                     </div>
 
-                    <div className="feed-post-card__tags">
-                        {tags}
+                    <div className="d-flex">
+                        <div className="me-auto d-flex align-items-center">
+                            <i className="material-icons me-1" style={{fontSize: "20px"}}>thumb_up</i>
+                            {this.props.post.upvotes}
+                        </div>
+
+                        <div className="feed-post-card__tags">
+                            {tags}
+                        </div>
                     </div>
                 </div>
 
