@@ -142,7 +142,7 @@ class Home extends React.Component {
                 </div>
 
                 <div className="full-feed-button">
-                    <button onClick={this.onCreateModalCall}>Post</button>
+                    <button onClick={this.onCreateModalCall} className="material-icons">add</button>
                 </div>
 
                 {
