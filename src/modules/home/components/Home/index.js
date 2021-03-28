@@ -138,9 +138,9 @@ class Home extends React.Component {
                             <div onClick={this.loadPosts} className="ms-auto refresh-button material-icons">refresh</div>
 
                             {((this.state.showFeed ^ this.state.showMap) === 1) &&
-                            <div>
-                                <button onClick={this.switchMap} className="btn btn-secondary">
-                                    {this.state.showMap ? "Feed" : "Map"}
+                            <div className="ms-3">
+                                <button onClick={this.switchMap} className="btn btn-secondary material-icons" style={{fontSize: "30px", padding: "0px 5px"}}>
+                                    {this.state.showMap ? "map" : "feed"}
                                 </button>
                             </div>}
                         </div>
