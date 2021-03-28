@@ -35,6 +35,7 @@ class Home extends React.Component {
                 break;
 
             case SORT_MODE.FEATURED:
+                posts = await Api.getFeatured(50);
                 break;
 
             case SORT_MODE.NEAR:

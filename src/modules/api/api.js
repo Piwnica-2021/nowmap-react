@@ -62,6 +62,20 @@ class ApiController {
         return response.json();
     }
 
+    async getFeatured(upvotes) {
+        const response = await this.getEndpoint(`/posts/featured?upvotes=${upvotes}`);
+        if (response.status !== 200)
+            return null;
+        return response.json();
+    }
+
+    async getFeaturedUpvotes(upvotes) {
+        const response = await this.getEndpoint(`/posts/featured/upvotes?upvotes=${upvotes}`);
+        if (response.status !== 200)
+            return null;
+        return response.json();
+    }
+
     async getPost(id) {
         const response = await this.getEndpoint(`/posts/${id}`);
         if (response.status !== 200)
