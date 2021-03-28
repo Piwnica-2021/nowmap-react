@@ -25,12 +25,6 @@ class Navbar extends React.Component {
                             <li className="nav-item">
                                 <NavLink className="nav-link"
                                          activeClassName="active"
-                                         to="/createPost">Create</NavLink>
-                            </li>
-
-                            <li className="nav-item">
-                                <NavLink className="nav-link"
-                                         activeClassName="active"
                                          to="/about">About</NavLink>
                             </li>
                         </ul>

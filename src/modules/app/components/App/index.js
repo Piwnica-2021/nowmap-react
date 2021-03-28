@@ -18,10 +18,6 @@ class App extends React.Component {
                         <Home/>
                     </Route>
 
-                    <Route path="/createPost">
-                        <NewPostPage />
-                    </Route>
-
                     <Route path="/about">
                         <About/>
                     </Route>
