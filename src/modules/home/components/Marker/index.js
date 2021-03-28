@@ -14,10 +14,10 @@ class Marker extends Component{
     return (
       <div>
         <div
-          className="marker material-icons"
+          className={this.props.icon == "emoji_people"? "marker user-marker material-icons":"marker material-icons" }
           onMouseOver={() => this.setState({visibility: "visible"})}
           onMouseOut={() => this.setState({visibility: "hidden"})}
-             style={{ color: this.props.color, cursor: 'pointer'}}>{this.props.icon}</div>
+          style={{ color: this.props.color, cursor: 'pointer'}}>{this.props.icon}</div>
         <div className="map-label-div">
         {
           this.props.name ?

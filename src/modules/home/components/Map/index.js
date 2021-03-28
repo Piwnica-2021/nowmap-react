@@ -28,7 +28,7 @@ class Map extends Component {
           <GoogleMapReact
               bootstrapURLKeys={{ key: "AIzaSyAUUR3rmebpIm98TxMmXkPZy6wjn2IOfV8" }}
               center={{ lat: this.state.lat, lng: this.state.lng }}
-              zoom={12}
+              zoom={13}
           >
             {this.props.posts.map((post, index) => {
               return(
