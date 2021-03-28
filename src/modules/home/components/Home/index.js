@@ -19,8 +19,10 @@ class Home extends React.Component {
             posts: [],
             createModalOn: false,
             sorting: SORT_MODE.RECENT,
-            myLat: 50.05,
-            myLong: 19.95,
+            myLat: 50.0640,
+            myLong: 19.9276,
+            userLat: 50.0640,
+            userLong: 19.9276,
             showMap: true,
             showFeed: true,
             dist: {},
@@ -32,7 +34,7 @@ class Home extends React.Component {
         if (sorting === null)
             sorting = this.state.sorting
 
-        const dist = await Api.getPostDistance(this.state.myLat, this.state.myLong) || {};
+        const dist = await Api.getPostDistance(this.state.userLat, this.state.userLong) || {};
         this.setState({dist: dist});
 
         let posts = null;
@@ -46,7 +48,7 @@ class Home extends React.Component {
                 break;
 
             case SORT_MODE.NEAR:
-                posts = await Api.getNearest(this.state.myLat, this.state.myLong)
+                posts = await Api.getNearest(this.state.userLat, this.state.userLong)
                 break;
         }
         return posts === null ? [] : posts;
